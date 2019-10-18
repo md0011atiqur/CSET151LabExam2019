@@ -78,22 +78,11 @@ public class StudentList {
 
 		//processing
 		else if(args[0].contains(Constants.showcount)) {
-			String alllines = LoadData();
-			char charactararry[] = alllines.toCharArray();
-			boolean in_word = false;
-			int count=0;
-			for(char eachcharactar:charactararry) {
-				if(eachcharactar ==' ') {
-					if (!in_word) {
-						count++;
-						in_word =true;
-					} else {
-						in_word=false;
-					}
-				}
-			}
-			System.out.println(count +Constants.showwordfound + charactararry.length);
-			System.out.println(Constants.showloadingdata);
-		}
+				String allstudentlist = LoadData();
+				String words[] = allstudentlist.split(",");
+				char charArray[] = allstudentlist.toCharArray();
+				int WordCount = words.length;
+				System.out.println(WordCount + " word(s) and " + charArray.length + " Characters Found");
+				System.out.println(Constants.shwowefoundit);
 	}
 }
