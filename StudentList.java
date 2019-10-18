@@ -68,12 +68,13 @@ public class StudentList {
 		{
 			String  contents = LoadData();
 			String wrods[] = contents.split(",");
-			boolean done = false;
 			String Query = args[0].substring(1);
-			System.out.println(Constants.shwowefoundit);
-			done=true;
-			System.out.println(Constants.showloadingdata);
-		}
+			for(int indexlocation = 0; indexlocation<wrods.length; indexlocation++) {
+			if(wrods[indexlocation].equals(Query))
+			{
+				System.out.println(Constants.shwowefoundit);
+				break;
+			}
 
 		//processing
 		else if(args[0].contains(Constants.showcount)) {
