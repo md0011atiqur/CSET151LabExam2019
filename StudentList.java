@@ -1,3 +1,4 @@
+
 import java.io.*;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -6,12 +7,12 @@ import java.util.Random;
 public class StudentList {
 	//read write method optimization start
 	public  static  String LoadData() {
-		System.out.println("Loading data ...");
+		System.out.println(Constants.showloadingdata);
 		String alllines = null;
 		try {
 			BufferedReader FileStream = new BufferedReader(
 					new InputStreamReader(
-							new FileInputStream("students.txt")));
+							new FileInputStream(Constants.mainfile)));
 			alllines = FileStream.readLine();
 		} catch (Exception e) {
 			System.out.println(e);
@@ -19,13 +20,13 @@ public class StudentList {
 		return alllines;
 	}
 	public  static  void WriteDate( String[] args) {
-		System.out.println("Loading data ...");
+		System.out.println(Constants.showloadingdata);
 		try {
 			BufferedWriter FileStream = new BufferedWriter(
-					new FileWriter("students.txt", true));
+					new FileWriter(Constants.mainfile, true));
 			String Input = args[0].substring(1);
 			Date d = new Date();
-			String df = "dd/mm/yyyy-hh:mm:ss a";
+			String df = Constants.showdateformat;
 			DateFormat dateFormat = new SimpleDateFormat(df);
 			String fd = dateFormat.format(d);
 			FileStream.write(", " + Input + "\n List last updated on ");
@@ -33,49 +34,49 @@ public class StudentList {
 		} catch (Exception e) {
 			System.out.println(e);
 		}
-		System.out.println("Data Loaded.");
+		System.out.println(Constants.showloadingdata);
 	}
 	//read write method optimization end
 	public static void main(String[] args) {
 		//early guard during argument pass
 		if(args.length != 1)
 		{
-			System.out.println("Usage: java StudentList a|r|c|?student1|+word");
+			System.out.println(Constants.showusagemessage);
 		}
 		//Check arguments
-		if(args[0].equals("Constants.showall"))
+		if(args[0].equals(Constants.showall))
 		{
 			String alllines = LoadData();
 			String words[] = alllines.split(",");
 			for(String word : words)
 				System.out.println(word);
-			System.out.println("Data Loaded.");
+			System.out.println(Constants.showloadingdata);
 		}
-		else if(args[0].equals("Constants.showrandom"))
+		else if(args[0].equals(Constants.showrandom))
 		{
 			String alllines = LoadData();
 			String words[] = alllines.split(",");
 			Random x = new Random();
 			int y = x.nextInt(1);
 			System.out.println(words[y]);
-			System.out.println("Data Loaded.");
+			System.out.println(Constants.showloadingdata);
 		}
-		else if(args[0].contains("Constants.showadd")){
+		else if(args[0].contains(Constants.showadd)){
 			WriteDate(args);
 		}
-		else if(args[0].contains("Constants.showsearch"))
+		else if(args[0].contains(Constants.showsearch))
 		{
 			String  contents = LoadData();
 			String wrods[] = contents.split(",");
 			boolean done = false;
 			String Query = args[0].substring(1);
-			System.out.println("We found it!");
+			System.out.println(Constants.shwowefoundit);
 			done=true;
-			System.out.println("Data Loaded.");
+			System.out.println(Constants.showloadingdata);
 		}
 
 		//processing
-		else if(args[0].contains("Constants.showcount")) {
+		else if(args[0].contains(Constants.showcount)) {
 			String alllines = LoadData();
 			char charactararry[] = alllines.toCharArray();
 			boolean in_word = false;
@@ -90,8 +91,8 @@ public class StudentList {
 					}
 				}
 			}
-			System.out.println(count +" word(s) found " + charactararry.length);
-			System.out.println("Data Loaded.");
+			System.out.println(count +Constants.showwordfound + charactararry.length);
+			System.out.println(Constants.showloadingdata);
 		}
 	}
 }
