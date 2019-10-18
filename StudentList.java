@@ -39,7 +39,7 @@ public class StudentList {
 	//read write method optimization end
 	public static void main(String[] args) {
 		//early guard during argument pass
-		if(args.length != 1)
+		if(args.length != 1 || args[0] != args[Constants.showall] |args[0] != args[Constants.showrandom] || args[0] != args[Constants.showsearch] || args[0] != args[Constants.showcount] || args[0] != args[Constants.showadd])
 		{
 			System.out.println(Constants.showusagemessage);
 		}
