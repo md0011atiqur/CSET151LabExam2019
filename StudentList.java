@@ -1,17 +1,19 @@
 import java.io.*;
-import java.text.*;
-import java.util.*;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Random;
 public class StudentList {
 	public static void main(String[] args) {
 
 		//early guard during argument pass
-		//		Check arguments
+		//	Check arguments
 		if(args.length != 1)
 		{
 			System.out.println("Usage: java StudentList a|r|c|?student1|+word");
 		}
 //		Check arguments
-		if(args[0].equals("a"))
+		if(args[0].equals("Constants.showall"))
 		{
 			System.out.println("Loading data ...");			
 			try
@@ -30,7 +32,7 @@ public class StudentList {
 			{}
 			System.out.println("Data Loaded.");
 		}
-		else if(args[0].equals("r")) 
+		else if(args[0].equals("showrandom"))
 		{
 			System.out.println("Loading data ...");			
 			try
@@ -49,7 +51,7 @@ public class StudentList {
 			{}
 			System.out.println("Data Loaded.");			
 		}
-		else if(args[0].contains("+")){
+		else if(args[0].contains("Constrants.showadd")){
 			System.out.println("Loading data ...");			
 			try
 			{
@@ -67,7 +69,7 @@ public class StudentList {
 			{}
 			System.out.println("Data Loaded.");	
 		}
-		else if(args[0].contains("?")) 
+		else if(args[0].contains("Constrants.showsearch"))
 		{
 			System.out.println("Loading data ...");			
 			try
@@ -91,7 +93,7 @@ public class StudentList {
 			{}
 			System.out.println("Data Loaded.");				
 		}
-		else if(args[0].contains("c")) 
+		else if(args[0].contains("Constrants.showcount"))
 		{
 			System.out.println("Loading data ...");			
 			try
