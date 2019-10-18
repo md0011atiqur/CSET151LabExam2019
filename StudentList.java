@@ -41,7 +41,7 @@ public class StudentList {
 			System.out.println("Usage: java StudentList a|r|c|?student1|+word");
 		}
 		//Check arguments
-		if(args[0].equals(Constants.showall))
+		if(args[0].equals(Constants.SHOWALL))
 		{
 			String alllines = LoadData();
 			String words[] = alllines.split(",");

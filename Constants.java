@@ -3,7 +3,7 @@
         private Constants() {
             // restrict instantiation
         }
-        public static final String showall = "a";
+        public static final String SHOWALL = "a";
         public static final String showcount ="c";
         public static final String showrandom ="r";
         public static final String showsearch ="?";
