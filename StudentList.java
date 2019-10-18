@@ -4,6 +4,12 @@ import java.util.*;
 public class StudentList {
 	public static void main(String[] args) {
 
+		//early guard during argument pass
+		//		Check arguments
+		if(args.length != 1)
+		{
+			System.out.println("Usage: java StudentList a|r|c|?student1|+word");
+		}
 //		Check arguments
 		if(args[0].equals("a"))
 		{
