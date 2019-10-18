@@ -20,7 +20,7 @@ public class StudentList {
 		System.out.println("Loading data ...");
 		try {
 			BufferedWriter FileStream = new BufferedWriter(
-			new FileWriter("students.txt", true));
+					new FileWriter("students.txt", true));
 			String Input = args[0].substring(1);
 			Date d = new Date();
 			String df = "dd/mm/yyyy-hh:mm:ss a";
@@ -43,11 +43,11 @@ public class StudentList {
 		//Check arguments
 		if(args[0].equals("a"))
 		{
-				String alllines = LoadData();
-				String words[] = alllines.split(",");
-				for(String word : words)
+			String alllines = LoadData();
+			String words[] = alllines.split(",");
+			for(String word : words)
 				System.out.println(word);
-				System.out.println("Data Loaded.");
+			System.out.println("Data Loaded.");
 		}
 		else if(args[0].equals("r"))
 		{
