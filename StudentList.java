@@ -25,10 +25,10 @@ public class StudentList {
 			BufferedWriter FileStream = new BufferedWriter(
 					new FileWriter(Constants.mainfile, true));
 			String Input = args[0].substring(1);
-			Date d = new Date();
-			String df = Constants.showdateformat;
-			DateFormat dateFormat = new SimpleDateFormat(df);
-			String fd = dateFormat.format(d);
+			Date todaydate = new Date();
+			String timestamp = Constants.showdateformat;
+			DateFormat dateFormat = new SimpleDateFormat(timestamp);
+			String fd = dateFormat.format(todaydate);
 			FileStream.write(", " + Input + "\n List last updated on ");
 			FileStream.close();
 		} catch (Exception e) {
